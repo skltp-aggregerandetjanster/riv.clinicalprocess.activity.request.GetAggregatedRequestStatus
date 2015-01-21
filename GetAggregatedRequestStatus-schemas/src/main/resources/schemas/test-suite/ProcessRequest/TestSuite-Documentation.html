@@ -1,0 +1,95 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="UTF-8"/>
+<title>TestSuite description ProcessRequest</title>
+<style>
+                    body {
+                        font-family: sans-serif;
+                        width: 800px;
+                        margin: 16px;
+                        counter-reset: section
+                    }
+                    p {
+                        margin: 0.2em;
+                    }
+                    h1 {
+                        counter-reset: sub-section;
+                        margin-bottom: 5px;
+                    }
+                    h2 {
+                        counter-reset: composite;
+                        margin-bottom: 5px;
+                    }
+                    h3 {
+                        counter-reset: detail;
+                        margin-bottom: 5px;
+                    }
+
+                    h1:before{
+                        counter-increment: section;
+                        content: counter(section) " ";
+                    }
+                    h2:before{
+                        counter-increment: sub-section;
+                        content: counter(section) "." counter(sub-section) " ";
+                    }
+                    h3:before{
+                        counter-increment: composite;
+                        content: counter(section) "." counter(sub-section) "." counter(composite) " ";
+                    }
+                    h4:before{
+                        counter-increment: detail;
+                        content: counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";
+                    }
+                </style>
+</head>
+<body>
+<section>
+<h1>TestSuite description ProcessRequest</h1>
+<summary>
+<article>
+<p>This testsuite is designed to verify the ProcessRequest contract.</p>
+<details>
+<summary>Global variables used</summary>
+<ul>
+<li>webServiceUrl</li>
+</ul>
+</details>
+</article>
+</summary>
+<article>
+<h2>Tools</h2>
+<h3>SoapUI</h3>
+                        The testsuite uses SoapUI to verify the implementation. Documentation of SoapUI can be found at <a href="http://www.soapui.org" target="_blank">http://www.soapui.org</a>
+<br/>
+                        Link to download site: <a href="http://sourceforge.net/projects/soapui/files/soapui/" target="_blank">http://sourceforge.net/projects/soapui/files/soapui/</a>
+<br/>
+                        Install SoapUI according to the documentation.
+
+                        <h3>Setup instructions</h3>
+<ol>
+<li>Locate the test-suite/[contractName]-directory in your distribution.</li>
+<li>Copy the jar-file ‘soapui-support.jar’ to &lt;SoapUI install dir&gt;/bin/ext</li>
+<li>Open SoapUI and import the SoapUI project from the above directory, choose ‘Import Project’ from the File-menu.</li>
+<li>If your WebService endpoint requires a SSL Certificate, this can be configured from the Preferences (in the File menu). In the Preferences window  open the ‘SSL Settings’ tab and import the Keystore containing the Client Certificate.</li>
+<li>Update test-data in data.xml to match the contents in your system.</li>
+<li>You should now be able to run the test suite!</li>
+</ol>
+</article>
+<h2>Testcases</h2>
+<article>
+<h3>Schema Compliance</h3>
+<p>The test verifies that the source system complies with the schema.</p>
+<details>
+<summary>Variables used</summary>
+<ul>
+<li>mockResponse</li>
+<li>httpHeaderHsaId</li>
+<li>logicalAddress</li>
+<li>personId</li>
+</ul>
+</details>
+</article>
+</section>
+</body>
+</html>

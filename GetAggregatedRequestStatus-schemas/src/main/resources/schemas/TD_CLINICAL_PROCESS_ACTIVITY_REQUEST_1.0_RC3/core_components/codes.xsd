@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:riv:clinicalprocess:activity:request:codes" targetNamespace="urn:riv:clinicalprocess:activity:request:codes" elementFormDefault="qualified">
+	<!-- kv_framställantyp_NeR, 1.2.752.129.2.2.2.24 -->
+	<!-- Har i remisstatuskontraktet ersatts av en mer generisk CVType -->
+	<xs:simpleType name="codeForRequestType_values">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>allmänremiss</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- kv_framställantyp_NeR, 1.2.752.129.2.2.2.24 -->
+	<!-- Har i remisstatuskontraktet ersatts av en mer generisk CVType -->
+	<xs:complexType name="codeForRequestType">
+		<xs:annotation>
+			<xs:documentation>Denna värdemängd innehåller information om vilken typ av remiss som avses.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeForRequestType_values" use="required"/>
+		<!-- Fixed attributes not needed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.129.2.2.2.24"/>
+		-->
+	</xs:complexType>
+	<!-- kv_yrkeskoder, 1.2.752.97.3.2.8.8 -->
+	<xs:simpleType name="codeForProfession_values">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AP">
+				<xs:annotation>
+					<xs:documentation>Apotekare</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AT">
+				<xs:annotation>
+					<xs:documentation>Arbetsterapeut</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AU">
+				<xs:annotation>
+					<xs:documentation>Audionom</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BM">
+				<xs:annotation>
+					<xs:documentation>Barnmorska</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BA">
+				<xs:annotation>
+					<xs:documentation>Biomedicinsk analytiker</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DT">
+				<xs:annotation>
+					<xs:documentation>Dietist</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="KP">
+				<xs:annotation>
+					<xs:documentation>Kiropraktor</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LG">
+				<xs:annotation>
+					<xs:documentation>Logoped</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LK">
+				<xs:annotation>
+					<xs:documentation>Läkare</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NA">
+				<xs:annotation>
+					<xs:documentation>Naprapat</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OP">
+				<xs:annotation>
+					<xs:documentation>Optiker</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OT">
+				<xs:annotation>
+					<xs:documentation>Ortopedingenjör</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PS">
+				<xs:annotation>
+					<xs:documentation>Psykolog</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PT">
+				<xs:annotation>
+					<xs:documentation>Psykoterapeut</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RC">
+				<xs:annotation>
+					<xs:documentation>Receptarie</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RS">
+				<xs:annotation>
+					<xs:documentation>Röntgensjuksköterska</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SG">
+				<xs:annotation>
+					<xs:documentation>Sjukgymnast</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SF">
+				<xs:annotation>
+					<xs:documentation>Sjukhusfysiker</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SJ">
+				<xs:annotation>
+					<xs:documentation>Sjuksköterska</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TH">
+				<xs:annotation>
+					<xs:documentation>Tandhygienist</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TL">
+				<xs:annotation>
+					<xs:documentation>Tandläkare</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- kv_yrkeskoder, 1.2.752.97.3.2.8.8 -->
+	<xs:complexType name="codeForProfession">
+		<xs:annotation>
+			<xs:documentation>Anger yrkesgrupper som är aktuella i remisshanteringen.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeForProfession_values" use="required"/>
+		<!--Not needed when fixed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.97.3.2.8.8"/>
+		-->
+	</xs:complexType>
+	<xs:simpleType name="codeVersionReason_values">
+		<xs:annotation>
+			<xs:documentation>Anger varför en ny version skapats</xs:documentation>
+			<xs:documentation>OID:1.2.752.97.3.2.8.5</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NR">
+				<xs:annotation>
+					<xs:documentation>Ny remiss</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AR">
+				<xs:annotation>
+					<xs:documentation>Ändrad remiss</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VR">
+				<xs:annotation>
+					<xs:documentation>Vidareskickad remiss</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AB">
+				<xs:annotation>
+					<xs:documentation>Ändrat betalningsansvar</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- -->
+	<xs:complexType name="codeVersionReason">
+		<xs:annotation>
+			<xs:documentation>Anger varför en ny version skapats.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeVersionReason_values" use="required"/>
+		<!-- Not needed when fixed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.97.3.2.8.5"/>
+		-->
+	</xs:complexType>
+	<xs:complexType name="codeForCondition">
+		<xs:annotation>
+			<xs:documentation>Anger kliniska tillståndskoder</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="xs:string" use="required"/>
+		<xs:attribute name="codeSystem" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="codeRequestOutcomeType_values">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SVA">
+				<xs:annotation>
+					<xs:documentation>Svar</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="codeRequestConfirmationType_values">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="KOM">
+				<xs:annotation>
+					<xs:documentation>Kompletteringsbegäran</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BEK">
+				<xs:annotation>
+					<xs:documentation>Bekräftelse</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VID">
+				<xs:annotation>
+					<xs:documentation>Besked om vidareskickning</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="codeRequestOutcomeType">
+		<xs:annotation>
+			<xs:documentation>Anger typen av svar.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeRequestOutcomeType_values" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="codeRequestConfirmationType">
+		<xs:annotation>
+			<xs:documentation>Anger typen av remissbekräftelse.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeRequestConfirmationType_values" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="codeForGenderType_values">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>okänt</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>man</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>kvinna</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="9">
+				<xs:annotation>
+					<xs:documentation>ej tillämpligt</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="codeForGenderType">
+		<xs:annotation>
+			<xs:documentation>Anger adminstrativt kön.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeForGenderType_values" use="required"/>
+		<!-- Fixed attributes not needed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.129.2.2.1.1"/>
+		-->
+	</xs:complexType>
+	<xs:simpleType name="codeForTelecomType_values">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="H">
+				<xs:annotation>
+					<xs:documentation>hemtelefon</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MC">
+				<xs:annotation>
+					<xs:documentation>mobiltelefon</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="codeForTelecomType">
+		<xs:annotation>
+			<xs:documentation>Anger olika typer av telekomadresser</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeForTelecomType_values" use="required"/>
+		<!-- Fixed attributes not needed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.129.2.2.1.30"/>
+		-->
+	</xs:complexType>
+	<xs:simpleType name="codeForAdressType_values">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>tillfällig adress</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="codeForAdressType">
+		<xs:annotation>
+			<xs:documentation>Anger olika typer av adresser</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeForAdressType_values" use="required"/>
+		<!-- Fixed attributes not needed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.129.2.2.1.20"/>
+		-->
+	</xs:complexType>
+	<!--List of type of agreements that support the payment agreement-->
+	<xs:complexType name="codeForCommitmentType">
+		<xs:annotation>
+			<xs:documentation>Anger förbindelsetyper för avtal</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeForCommitmentType_values" use="required"/>
+		<!-- Fixed attributes not needed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.129.2.2.2.44"/>
+		-->
+	</xs:complexType>
+	<xs:simpleType name="codeForCommitmentType_values">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>Riksavtal</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>Regionavtal</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>Mellanlänsavtal</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--List of chapters within Riksavtalet that support the payment agreement-->
+	<xs:complexType name="codeForCommitmentTypeChapter">
+		<xs:annotation>
+			<xs:documentation>Anger förbindelsetyper för avtalskapitel</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeForCommitmentTypeChapter_values" use="required"/>
+		<!-- Fixed attributes not needed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.129.2.2.X.X"/>
+		-->
+	</xs:complexType>
+	<xs:simpleType name="codeForCommitmentTypeChapter_values">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>Kap 2 Vård efter initiativ från hemlandstinget</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>Kap 2 Vårdgaranti</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>Kap 3 Akutvård</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>Kap 4 Patientens val</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--List of Sweden's 21 county councils ("landsting")-->
+	<xs:complexType name="codeForCountyCouncil">
+		<xs:annotation>
+			<xs:documentation>Anger Sveriges 21 landsting</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeForCountyCouncil_values" use="required"/>
+		<!-- Fixed attributes not needed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.2.2.1.18"/>
+		-->
+	</xs:complexType>
+	<xs:simpleType name="codeForCountyCouncil_values">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>Stockholms län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>Uppsala län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>Södermanlands län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="5">
+				<xs:annotation>
+					<xs:documentation>Östergötlands län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="6">
+				<xs:annotation>
+					<xs:documentation>Jönköpings län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="7">
+				<xs:annotation>
+					<xs:documentation>Kronobergs län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="8">
+				<xs:annotation>
+					<xs:documentation>Kalmar län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="9">
+				<xs:annotation>
+					<xs:documentation>Gotlands län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>Blekinge län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="12">
+				<xs:annotation>
+					<xs:documentation>Skåne län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="13">
+				<xs:annotation>
+					<xs:documentation>Hallands län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="14">
+				<xs:annotation>
+					<xs:documentation>Västra Götalands län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="17">
+				<xs:annotation>
+					<xs:documentation>Värmlands län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="18">
+				<xs:annotation>
+					<xs:documentation>Örebro län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="19">
+				<xs:annotation>
+					<xs:documentation>Västmanlands län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="20">
+				<xs:annotation>
+					<xs:documentation>Dalarnas län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="21">
+				<xs:annotation>
+					<xs:documentation>Gävleborgs län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="22">
+				<xs:annotation>
+					<xs:documentation>Västernorrlands län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="23">
+				<xs:annotation>
+					<xs:documentation>Jämtlands län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="24">
+				<xs:annotation>
+					<xs:documentation>Västerbottens län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="25">
+				<xs:annotation>
+					<xs:documentation>Norrbottens län</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--List of valid types of reimbursements-->
+	<xs:complexType name="codeForReimbursementType">
+		<xs:annotation>
+			<xs:documentation>Anger källor till ersättning</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="code" type="codeForReimbursementType_values" use="required"/>
+		<!-- Fixed attributes not needed in greenCDA
+		<xs:attribute name="codeSystem" use="required" fixed="1.2.752.129.2.2.X.X"/>
+		-->
+	</xs:complexType>
+	<xs:simpleType name="codeForReimbursementType_values">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>Ersättning från patientens hemlandsting enligt reglerna i riksavtalet</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>Ersättning från patientens hemlandsting enligt hemlandstingets kontrakt med vårdgivaren</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

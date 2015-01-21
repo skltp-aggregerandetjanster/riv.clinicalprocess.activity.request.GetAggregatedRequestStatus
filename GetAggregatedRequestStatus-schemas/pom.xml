@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOING!
+[soi-toolkit.gen.version=0.6.1-SNAPSHOT]
+[soi-toolkit.gen.type=schemas]
+[soi-toolkit.gen.createDate=2015-01-16T09:42:50.565+01:00]
+[soi-toolkit.gen.artifactId=GetAggregatedRequestStatus]
+-->
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.activity.request</groupId>
+    <artifactId>GetAggregatedRequestStatus-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>GetAggregatedRequestStatus-schemas</artifactId>
+  <packaging>jar</packaging>
+  
+  <name>GetAggregatedRequestStatus-schemas</name>
+
+  <properties>
+    <!-- Properties for generating code from WSDL and XML Schemas (JAX-WS + JAXB) -->
+    <schema.path>${basedir}/src/main/resources/schemas</schema.path>
+    <schema.gen.src.dir>${project.build.directory}/generated-sources/cxf</schema.gen.src.dir>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.soitoolkit.commons.poms</groupId>
+      <artifactId>soitoolkit-schemas-jax-ws-dependencies</artifactId>
+      <version>${soitoolkit.version}</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+   <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-codegen-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>ws.generate</id>
+            <phase>generate-sources</phase>
+            <configuration>
+              <!-- TODO start -->
+              <!-- fork to avoid encoding issues, ref: soi-toolkit issue 360 -->
+              <fork>once</fork>
+              <additionalJvmArgs>-Dfile.encoding=UTF-8</additionalJvmArgs>
+              <!-- TODO end-->
+              <sourceRoot>${schema.gen.src.dir}</sourceRoot>
+              <wsdlOptions>
+                <wsdlOption>
+                  <wsdl>${schema.path}/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/GetRequestInstructionInteraction/GetRequestInstructionInteraction_1.0_RIVTABP21.wsdl</wsdl>
+                  <extraargs>
+                  <extraarg>-validate</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:GetRequestInstruction:1:rivtabp21=riv.clinicalprocess.activity.request.getrequestinstruction.v1.rivtabp21</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:GetRequestInstructionResponder:1=riv.clinicalprocess.activity.request.getrequestinstructionresponder.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:1=riv.clinicalprocess.activity.request.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:codes=riv.clinicalprocess.activity.request.codes</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:itintegration:registry:1=riv.itintegration.registry.v1</extraarg>
+                  </extraargs>
+                </wsdlOption>
+                <wsdlOption>
+                  <wsdl>${schema.path}/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/GetRequestStatusInteraction/GetRequestStatusInteraction_1.0_RIVTABP21.wsdl</wsdl>
+                  <extraargs>
+                  <extraarg>-validate</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:GetRequestStatus:1:rivtabp21=riv.clinicalprocess.activity.request.getrequeststatus.v1.rivtabp21</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1=riv.clinicalprocess.activity.request.getrequeststatusresponder.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:1=riv.clinicalprocess.activity.request.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:codes=riv.clinicalprocess.activity.request.codes</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:itintegration:registry:1=riv.itintegration.registry.v1</extraarg>
+                  </extraargs>
+                </wsdlOption>
+                <wsdlOption>
+                  <wsdl>${schema.path}/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/ProcessRequestConfirmationInteraction/ProcessRequestConfirmationInteraction_1.0_RIVTABP21.wsdl</wsdl>
+                  <extraargs>
+                  <extraarg>-validate</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:ProcessRequestConfirmation:1:rivtabp21=riv.clinicalprocess.activity.request.processrequestconfirmation.v1.rivtabp21</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:ProcessRequestConfirmationResponder:1=riv.clinicalprocess.activity.request.processrequestconfirmationresponder.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:1=riv.clinicalprocess.activity.request.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:codes=riv.clinicalprocess.activity.request.codes</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:itintegration:registry:1=riv.itintegration.registry.v1</extraarg>
+                  </extraargs>
+                </wsdlOption>
+                <wsdlOption>
+                  <wsdl>${schema.path}/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/ProcessRequestInteraction/ProcessRequestInteraction_1.0_RIVTABP21.wsdl</wsdl>
+                  <extraargs>
+                  <extraarg>-validate</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:ProcessRequest:1:rivtabp21=riv.clinicalprocess.activity.request.processrequest.v1.rivtabp21</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:ProcessRequestResponder:1=riv.clinicalprocess.activity.request.processrequestresponder.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:1=riv.clinicalprocess.activity.request.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:codes=riv.clinicalprocess.activity.request.codes</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:itintegration:registry:1=riv.itintegration.registry.v1</extraarg>
+                  </extraargs>
+                </wsdlOption>
+                <wsdlOption>
+                  <wsdl>${schema.path}/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/ProcessRequestOutcomeInteraction/ProcessRequestOutcomeInteraction_1.0_RIVTABP21.wsdl</wsdl>
+                  <extraargs>
+                  <extraarg>-validate</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:ProcessRequestOutcome:1:rivtabp21=riv.clinicalprocess.activity.request.processrequestoutcome.v1.rivtabp21</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:ProcessRequestOutcomeResponder:1=riv.clinicalprocess.activity.request.processrequestoutcomeresponder.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:1=riv.clinicalprocess.activity.request.v1</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:clinicalprocess:activity:request:codes=riv.clinicalprocess.activity.request.codes</extraarg>
+                  <extraarg>-p</extraarg>
+                  <extraarg>urn:riv:itintegration:registry:1=riv.itintegration.registry.v1</extraarg>
+                  </extraargs>
+                </wsdlOption>
+              </wsdlOptions>
+            </configuration>
+            <goals>
+              <goal>wsdl2java</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <!-- Create a zip-file only containing wsdl & xsd files, 
+             i.e. no JAX-WS/JAXB-generated artifacts, for example for a Microsoft .Net C# app -->
+        <artifactId>maven-assembly-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <!-- Plugin-dependency to a shared assembly-descriptor that creates the zip-file -->
+            <groupId>org.soitoolkit.commons.poms</groupId>
+            <artifactId>soitoolkit-assembly-descriptors</artifactId>
+            <version>${soitoolkit.version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>schema-assembly-descriptor.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements. See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership. Sveriges Kommuner och Landsting licenses this file
+to you under the Apache License, Version 2.0 (the
+        "License"); you may not use this file except in compliance
+with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied. See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<testsuite>
+    <id>Schema Compliance TestSuite</id>
+    <description>This testsuite validates the schema.</description>
+    <globaldata>
+		<mockResponse>Schema Compliance</mockResponse>
+		<httpHeaderHsaId>httpHeaderHsaId</httpHeaderHsaId>
+		<logicalAddress>logicalAddress</logicalAddress>
+		<personId>191212121212</personId>
+    </globaldata>
+    <testcase id="Schema Compliance - GetRequestInstruction">
+        <description>The test verifies that the source system complies with the schema.</description>
+        <data>
+		    <webServiceUrl>http://localhost:8088/mockGetRequestInstructionResponderBinding</webServiceUrl>
+        </data>
+    </testcase>
+	<testcase id="Schema Compliance - ProcessRequest">
+        <description>The test verifies that the source system complies with the schema.</description>
+        <data>
+		    <webServiceUrl>http://localhost:8088/mockProcessRequestResponderBinding</webServiceUrl>
+        </data>
+    </testcase>
+	<testcase id="Schema Compliance - ProcessRequestConfirmation">
+        <description>The test verifies that the source system complies with the schema.</description>
+        <data>
+		    <webServiceUrl>http://localhost:8088/mockProcessRequestConfirmationResponderBinding</webServiceUrl>
+        </data>
+    </testcase>
+	<testcase id="Schema Compliance - ProcessRequestOutcome">
+        <description>The test verifies that the source system complies with the schema.</description>
+        <data>
+		    <webServiceUrl>http://localhost:8088/mockProcessRequestOutcomeResponderBinding</webServiceUrl>
+        </data>
+    </testcase>
+	<testcase id="Schema Compliance - GetRequestStatus">
+        <description>The test verifies that the source system complies with the schema.</description>
+        <data>
+		    <webServiceUrl>http://localhost:8088/mockGetRequestStatusResponderBinding</webServiceUrl>
+        </data>
+    </testcase>
+</testsuite>
