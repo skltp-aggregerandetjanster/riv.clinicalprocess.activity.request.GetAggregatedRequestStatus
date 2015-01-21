@@ -8,3 +8,5 @@ GetAggregatedRequestStatus/target
 .project
 .classpath
 GetAggregatedRequestStatus-teststub/.settings
+.settings
+target
