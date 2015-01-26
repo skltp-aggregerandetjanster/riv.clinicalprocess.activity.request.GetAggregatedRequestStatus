@@ -1,7 +1,7 @@
 package se.skltp.aggregatingservices.riv.clinicalprocess.activity.request.getaggregatedrequeststatus.integrationtest;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 import static se.skltp.agp.riv.interoperability.headers.v1.CausingAgentEnum.VIRTUALIZATION_PLATFORM;
 import static se.skltp.agp.test.consumer.AbstractTestConsumer.SAMPLE_ORIGINAL_CONSUMER_HSAID;
 import static se.skltp.agp.test.consumer.AbstractTestConsumer.SAMPLE_SENDER_ID;
@@ -28,9 +28,7 @@ import org.slf4j.LoggerFactory;
 import org.soitoolkit.commons.mule.util.RecursiveResourceBundle;
 
 import riv.clinicalprocess.activity.request.getrequeststatusresponder.v1.GetRequestStatusResponseType;
-
 import riv.clinicalprocess.activity.request.v1.RequestStatusType;
-
 import se.skltp.aggregatingservices.riv.clinicalprocess.activity.request.getaggregatedrequeststatus.GetAggregatedRequestStatusMuleServer;
 import se.skltp.agp.riv.interoperability.headers.v1.ProcessingStatusRecordType;
 import se.skltp.agp.riv.interoperability.headers.v1.ProcessingStatusType;
@@ -53,14 +51,15 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 	private static final String DEFAULT_SERVICE_ADDRESS = GetAggregatedRequestStatusMuleServer.getAddress("SERVICE_INBOUND_URL");
 
 	protected String getConfigResources() {
+	    
 		return 
 			"soitoolkit-mule-jms-connector-activemq-embedded.xml," + 
-	  		"GetAggregatedRequestStatus-common.xml," +
-//          Only load GetAggregatedRequestStatus-common.xml, it will import the other config files since mule-deploy.properties can't load config-files from jar-files on the classpath, e.g. agp-core.jar
-//			"aggregating-services-common.xml," + 
-//	        "aggregating-service.xml," +
+//           Only load GetAggregatedRequestStatus-common.xml, it will import the other config files 
+//	  		 since mule-deploy.properties can't load config-files from jar-files on the classpath, e.g. agp-core.jar
+            "GetAggregatedRequestStatus-common.xml," +
 			"teststub-services/engagemangsindex-teststub-service.xml," + 
-			"teststub-services/service-producer-teststub-service.xml";
+			"teststub-services/service-producer-teststub-service.xml," +
+			"thisfiledoenstexist.xml";
     }
 
 	/**

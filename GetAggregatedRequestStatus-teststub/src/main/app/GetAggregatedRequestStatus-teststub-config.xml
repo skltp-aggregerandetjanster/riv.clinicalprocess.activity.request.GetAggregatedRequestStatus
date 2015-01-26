@@ -10,7 +10,22 @@
 
     <spring:beans>
       <!-- Load all resources needed by the core artifact -->
-      <spring:import resource="classpath:GetAggregatedRequestStatus-common.xml"/>
+      <spring:import resource="classpath:aggregating-services-common.xml"/>
+      
+      <spring:bean
+            class="org.jasypt.spring.properties.EncryptablePropertyPlaceholderConfigurer"
+            id="propertyConfigurer">
+            <spring:constructor-arg ref="configurationEncryptor" />
+            <spring:property name="ignoreResourceNotFound" value="true" />
+            <spring:property name="locations">
+                <spring:list>
+                    <spring:value>classpath:GetAggregatedRequestStatus-config.properties
+                    </spring:value>
+                    <spring:value>classpath:GetAggregatedRequestStatus-config-override.properties
+                    </spring:value>
+                </spring:list>
+            </spring:property>
+        </spring:bean>
       
       <!-- Load all teststub services -->
       <spring:import resource="classpath:teststub-services/*-teststub-service.xml"/>

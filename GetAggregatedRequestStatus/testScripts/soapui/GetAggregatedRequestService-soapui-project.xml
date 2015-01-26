@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project activeEnvironment="Default" name="GetAggregatedRequestStatus" resourceRoot="" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="GetRequestStatusResponderBinding" type="wsdl" bindingName="{urn:riv:clinicalprocess:activity:request:GetRequestStatus:1:rivtabp21}GetRequestStatusResponderBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/martin/git/riv.clinicalprocess.activity.request.GetAggregatedRequestStatus/GetAggregatedRequestStatus-schemas/src/main/resources/schemas/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/GetRequestStatusInteraction/GetRequestStatusInteraction_1.0_RIVTABP21.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/martin/git/riv.clinicalprocess.activity.request.GetAggregatedRequestStatus/GetAggregatedRequestStatus-schemas/src/main/resources/schemas/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/GetRequestStatusInteraction/GetRequestStatusInteraction_1.0_RIVTABP21.wsdl"><con:part><con:url>file:/Users/martin/git/riv.clinicalprocess.activity.request.GetAggregatedRequestStatus/GetAggregatedRequestStatus-schemas/src/main/resources/schemas/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/GetRequestStatusInteraction/GetRequestStatusInteraction_1.0_RIVTABP21.wsdl</con:url><con:content><![CDATA[<!--Licensed to the Apache Software Foundation (ASF) under one
+<con:soapui-project activeEnvironment="Default" name="GetAggregatedRequestStatus" resourceRoot="" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="Testcases not including VP"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value="serviceEndpoint=33.33.33.33:8084"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="TC5: Error från system"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="GetRequestStatusResponderBinding" type="wsdl" bindingName="{urn:riv:clinicalprocess:activity:request:GetRequestStatus:1:rivtabp21}GetRequestStatusResponderBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/martin/git/riv.clinicalprocess.activity.request.GetAggregatedRequestStatus/GetAggregatedRequestStatus-schemas/src/main/resources/schemas/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/GetRequestStatusInteraction/GetRequestStatusInteraction_1.0_RIVTABP21.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/martin/git/riv.clinicalprocess.activity.request.GetAggregatedRequestStatus/GetAggregatedRequestStatus-schemas/src/main/resources/schemas/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/GetRequestStatusInteraction/GetRequestStatusInteraction_1.0_RIVTABP21.wsdl"><con:part><con:url>file:/Users/martin/git/riv.clinicalprocess.activity.request.GetAggregatedRequestStatus/GetAggregatedRequestStatus-schemas/src/main/resources/schemas/TD_CLINICAL_PROCESS_ACTIVITY_REQUEST_1.0_RC3/interactions/GetRequestStatusInteraction/GetRequestStatusInteraction_1.0_RIVTABP21.wsdl</con:url><con:content><![CDATA[<!--Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements. See the NOTICE file
  distributed with this work for additional information
  regarding copyright ownership. Sveriges Kommuner och Landsting licenses this file
@@ -1412,29 +1442,31 @@ Examples: 1
       <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://tempuri.org</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus" name="GetRequestStatus" bindingOperationName="GetRequestStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="121212121212 - Tolvan Tolvansson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#serviceEndpointVp}/vp/clinicalprocess/activity/request/GetRequestStatus/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
-  xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
-  xmlns:urn     = "urn:riv:itintegration:registry:1" 
-  xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
-  xmlns:urn2    = "urn:riv:clinicalprocess:activity:request:1">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://tempuri.org</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus" name="GetRequestStatus" bindingOperationName="GetRequestStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="121212121212 - Tolvan Tolvansson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" xmlns:urn2="urn:riv:clinicalprocess:activity:request:1">
    <soapenv:Header>
       <urn:LogicalAddress>5565594230</urn:LogicalAddress>
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="1234"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>121212121212</urn2:extension>
-         </urn1:patientId>
+         <urn2:requestId extension="1-1234"/>
+         <urn2:personId extension="121212121212" root="1.2.752.129.2.1.3.1"/>
+         <!--Zero or more repetitions:-->
          <urn1:typeOfRequest>something</urn1:typeOfRequest>
+         <!--Optional:-->
          <urn1:timePeriod>
-            <urn2:start value="199201312359"/>
-            <urn2:end value="201501150059"/>
+            <urn2:start value="19920131115938"/>
+            <urn2:end   value="20150115005901"/>
          </urn1:timePeriod>
+         <!--You may enter ANY elements at this point-->
       </urn1:GetRequestStatus>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="188803099368 - Agda Andersson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#serviceEndpointVp}/vp/clinicalprocess/activity/request/GetRequestStatus/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="188803099368 - Agda Andersson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value=""/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
   xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:urn     = "urn:riv:itintegration:registry:1" 
   xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
@@ -1444,14 +1476,14 @@ Examples: 1
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="2345"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>188803099368</urn2:extension>
-         </urn1:patientId>
+         <urn2:requestId extension="2-2345"/>
+         <urn2:personId extension="188803099368" root="1.2.752.129.2.1.3.1"/>
       </urn1:GetRequestStatus>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="192011189228 - Gunbritt Boden"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#serviceEndpointVp}/vp/clinicalprocess/activity/request/GetRequestStatus/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="192011189228 - Gunbritt Boden"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
   xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:urn     = "urn:riv:itintegration:registry:1" 
   xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
@@ -1461,14 +1493,14 @@ Examples: 1
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="2345"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>192011189228</urn2:extension>
-         </urn1:patientId>
+         <urn2:requestId extension="3-2345"/>
+         <urn2:personId extension="192011189228" root="1.2.752.129.2.1.3.1"/>
       </urn1:GetRequestStatus>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="194804032094 - Laban Meijer"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#serviceEndpointVp}/vp/clinicalprocess/activity/request/GetRequestStatus/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="194804032094 - Laban Meijer"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
   xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:urn     = "urn:riv:itintegration:registry:1" 
   xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
@@ -1478,14 +1510,14 @@ Examples: 1
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="2345"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>194804032094</urn2:extension>
-         </urn1:patientId>
+         <urn2:requestId extension="4-2345"/>
+         <urn2:personId extension="194804032094" root="1.2.752.129.2.1.3.1"/>
       </urn1:GetRequestStatus>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="194911172296 - Sven Sturesson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#serviceEndpointVp}/vp/clinicalprocess/activity/request/GetRequestStatus/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="194911172296 - Sven Sturesson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
   xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:urn     = "urn:riv:itintegration:registry:1" 
   xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
@@ -1495,14 +1527,14 @@ Examples: 1
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="2345"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>194911172296</urn2:extension>
-         </urn1:patientId>
+         <urn2:requestId extension="5-2345"/>
+         <urn2:personId extension="194911172296" root="1.2.752.129.2.1.3.1"/>
       </urn1:GetRequestStatus>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="198611062384 - Ulla Alm"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#serviceEndpointVp}/vp/clinicalprocess/activity/request/GetRequestStatus/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call><con:call name="198611062384 - Ulla Alm"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
   xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:urn     = "urn:riv:itintegration:registry:1" 
   xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
@@ -1512,11 +1544,8 @@ Examples: 1
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="2345"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>198611062384</urn2:extension>
-         </urn1:patientId>
+         <urn2:requestId extension="6-2345"/>
+         <urn2:personId extension="198611062384" root="1.2.752.129.2.1.3.1"/>
       </urn1:GetRequestStatus>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="FindContentResponderBinding" type="wsdl" bindingName="{urn:riv:itintegration:engagementindex:FindContent:1:rivtabp21}FindContentResponderBinding" soapVersion="1_1" anonymous="optional" definition="http://skltp-box-host:8070/vp/FindContent/1/rivtabp21?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://skltp-box-host:8070/vp/FindContent/1/rivtabp21?wsdl"><con:part><con:url>http://skltp-box-host:8070/vp/FindContent/1/rivtabp21?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="FindContentInteraction" targetNamespace="urn:riv:itintegration:engagementindex:FindContent:1:rivtabp21" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tjsi="urn:riv:itintegration:engagementindex:FindContentInitiator:1" xmlns:tjsr="urn:riv:itintegration:engagementindex:FindContentResponder:1" xmlns:tns="urn:riv:itintegration:engagementindex:FindContent:1:rivtabp21" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -1885,18 +1914,14 @@ Examples: 1
   <xs:simpleType name="LogicalAddressType">
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://${#Project#serviceEndpoint}/agp/getaggregatedmeasurement/itintegration/monitoring/PingForConfiguration/1/rivtabp21</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:riv:itintegration:monitoring:PingForConfigurationResponder:1:PingForConfiguration" name="PingForConfiguration" bindingOperationName="PingForConfiguration" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="pingForConfiguration"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/agp/getaggregatedrequeststatus/itintegration/monitoring/PingForConfiguration/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
-  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
-  xmlns:urn="urn:riv:itintegration:registry:1" 
-  xmlns:urn1="urn:riv:itintegration:monitoring:PingForConfigurationResponder:1">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://${#Project#serviceEndpoint}/agp/getaggregatedmeasurement/itintegration/monitoring/PingForConfiguration/1/rivtabp21</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:riv:itintegration:monitoring:PingForConfigurationResponder:1:PingForConfiguration" name="PingForConfiguration" bindingOperationName="PingForConfiguration" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="PingForConfiguration"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/agp/getaggregatedrequeststatus/itintegration/monitoring/PingForConfiguration/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:itintegration:monitoring:PingForConfigurationResponder:1">
    <soapenv:Header>
-      <urn:LogicalAddress>?</urn:LogicalAddress>
+      <urn:LogicalAddress>5565594230</urn:LogicalAddress>
    </soapenv:Header>
    <soapenv:Body>
       <urn1:PingForConfiguration>
-         <urn1:serviceContractNamespace>?</urn1:serviceContractNamespace>
-         <urn1:logicalAddress>?</urn1:logicalAddress>
-         <!--You may enter ANY elements at this point-->
+         <urn1:serviceContractNamespace>something</urn1:serviceContractNamespace>
+         <urn1:logicalAddress>5565594230</urn1:logicalAddress>
       </urn1:PingForConfiguration>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:monitoring:PingForConfigurationResponder:1:PingForConfiguration"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="UpdateResponderBinding" type="wsdl" bindingName="{urn:riv:itintegration:engagementindex:Update:1:rivtabp21}UpdateResponderBinding" soapVersion="1_1" anonymous="optional" definition="http://${#Project#serviceEndpoint}:8070/vp/Update/1/rivtabp21?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://33.33.33.33:8070/vp/Update/1/rivtabp21?wsdl"><con:part><con:url>http://33.33.33.33:8070/vp/Update/1/rivtabp21?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="UpdateInteraction" targetNamespace="urn:riv:itintegration:engagementindex:Update:1:rivtabp21" xmlns:itr="urn:riv:itintegration:registry:1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tjsi="urn:riv:itintegration:engagementindex:UpdateInitiator:1" xmlns:tjsr="urn:riv:itintegration:engagementindex:UpdateResponder:1" xmlns:tns="urn:riv:itintegration:engagementindex:Update:1:rivtabp21" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -2269,29 +2294,31 @@ Examples: 1
          </urn1:engagementTransaction>
       </urn1:Update>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:engagementindex:UpdateResponder:1:Update"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="Testcases not including VP"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC1:Hämta data från bakomliggande producenter" searchProperties="true"><con:settings/><con:testStep type="request" name="GetRequestStatus - Tolvan Tolvansson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetRequestStatusResponderBinding</con:interface><con:operation>GetRequestStatus</con:operation><con:request name="GetRequestStatus - Tolvan Tolvansson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetRequestStatusResponder/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
-  xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
-  xmlns:urn     = "urn:riv:itintegration:registry:1" 
-  xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
-  xmlns:urn2    = "urn:riv:clinicalprocess:activity:request:1">
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:engagementindex:UpdateResponder:1:Update"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="Testcases not including VP"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC1:Hämta data från bakomliggande producenter" searchProperties="true" id="dc138173-77b3-48e0-a3e9-05fd87473319"><con:settings/><con:testStep type="request" name="PingForConfiguration - PingForConfiguration"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PingForConfigurationResponderBinding</con:interface><con:operation>PingForConfiguration</con:operation><con:request name="PingForConfiguration - PingForConfiguration" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/agp/getaggregatedrequeststatus/itintegration/monitoring/PingForConfiguration/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:itintegration:monitoring:PingForConfigurationResponder:1">    <soapenv:Header>       <urn:LogicalAddress>5565594230</urn:LogicalAddress>    </soapenv:Header>    <soapenv:Body>       <urn1:PingForConfiguration>          <urn1:serviceContractNamespace>something</urn1:serviceContractNamespace>          <urn1:logicalAddress>5565594230</urn1:logicalAddress>       </urn1:PingForConfiguration>    </soapenv:Body> </soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:monitoring:PingForConfigurationResponder:1:PingForConfiguration"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetRequestStatus - 121212121212 - Tolvan Tolvansson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetRequestStatusResponderBinding</con:interface><con:operation>GetRequestStatus</con:operation><con:request name="GetRequestStatus - 121212121212 - Tolvan Tolvansson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" xmlns:urn2="urn:riv:clinicalprocess:activity:request:1">
    <soapenv:Header>
       <urn:LogicalAddress>5565594230</urn:LogicalAddress>
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="1234"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>121212121212</urn2:extension>
-         </urn1:patientId>
+         <urn2:requestId extension="1-1234"/>
+         <urn2:personId extension="121212121212" root="1.2.752.129.2.1.3.1"/>
+         <!--Zero or more repetitions:-->
          <urn1:typeOfRequest>something</urn1:typeOfRequest>
+         <!--Optional:-->
          <urn1:timePeriod>
-            <urn2:start value="199201312359"/>
-            <urn2:end value="201501150059"/>
+            <urn2:start value="19920131115938"/>
+            <urn2:end   value="20150115005901"/>
          </urn1:timePeriod>
+         <!--You may enter ANY elements at this point-->
       </urn1:GetRequestStatus>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC2: Testperson saknar engagemang" searchProperties="true"><con:settings/><con:testStep type="request" name="GetRequestStatus - Agda Andersson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetRequestStatusResponderBinding</con:interface><con:operation>GetRequestStatus</con:operation><con:request name="GetRequestStatus - Agda Andersson"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetRequestStatusResponder/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC2: Testperson saknar engagemang" searchProperties="true" id="638e63ff-24b1-4dba-a481-ba7b0b334f80"><con:settings/><con:testStep type="request" name="GetRequestStatus - 188803099368 - Agda Andersson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetRequestStatusResponderBinding</con:interface><con:operation>GetRequestStatus</con:operation><con:request name="GetRequestStatus - 188803099368 - Agda Andersson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
   xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:urn     = "urn:riv:itintegration:registry:1" 
   xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
@@ -2301,14 +2328,14 @@ Examples: 1
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="2345"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>188803099368</urn2:extension>
-         </urn1:patientId>
+         <urn2:requestId extension="2-2345"/>
+         <urn2:personId extension="188803099368" root="1.2.752.129.2.1.3.1"/>
       </urn1:GetRequestStatus>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC4: Timeout från system" searchProperties="true"><con:settings/><con:testStep type="request" name="GetRequestStatus - Ulla Alm - timeout"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetRequestStatusResponderBinding</con:interface><con:operation>GetRequestStatus</con:operation><con:request name="GetRequestStatus - Ulla Alm - timeout"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetRequestStatusResponder/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>33.33.33.33:8084</con:value></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC4: Timeout från system" searchProperties="true" id="1f5981af-cc4c-4dd8-a38b-1ffb7c8ed04b"><con:settings/><con:testStep type="request" name="GetRequestStatus - 198611062384 - Ulla Alm"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetRequestStatusResponderBinding</con:interface><con:operation>GetRequestStatus</con:operation><con:request name="GetRequestStatus - 198611062384 - Ulla Alm" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
   xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:urn     = "urn:riv:itintegration:registry:1" 
   xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
@@ -2318,14 +2345,14 @@ Examples: 1
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="2345"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>198611062384</urn2:extension>
-         </urn1:patientId>
+         <urn2:requestId extension="6-2345"/>
+         <urn2:personId extension="198611062384" root="1.2.752.129.2.1.3.1"/>
       </urn1:GetRequestStatus>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC5: Error från system" searchProperties="true"><con:settings/><con:testStep type="request" name="GetRequestStatus - Tolvan Tolvansson - error"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetRequestStatusResponderBinding</con:interface><con:operation>GetRequestStatus</con:operation><con:request name="GetRequestStatus - Tolvan Tolvansson - error"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://tempuri.org</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC5: Error från system" searchProperties="true" id="8bd7ba03-e1b4-475d-8db3-36c8fcb4a9b5"><con:settings/><con:testStep type="request" name="GetRequestStatus - 192011189228 - Gunbritt Boden"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetRequestStatusResponderBinding</con:interface><con:operation>GetRequestStatus</con:operation><con:request name="GetRequestStatus - 192011189228 - Gunbritt Boden" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+  &lt;con:entry key="x-vp-sender-id" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://${#Project#serviceEndpoint}/GetAggregatedRequestStatus/service/v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope 
   xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
   xmlns:urn     = "urn:riv:itintegration:registry:1" 
   xmlns:urn1    = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1" 
@@ -2335,21 +2362,13 @@ Examples: 1
    </soapenv:Header>
    <soapenv:Body>
       <urn1:GetRequestStatus>
-         <urn2:requestId extension="1234"/>
-         <urn1:patientId>
-            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
-            <urn2:extension>121212121212</urn2:extension>
-         </urn1:patientId>
-         <urn1:typeOfRequest>something</urn1:typeOfRequest>
-         <urn1:timePeriod>
-            <urn2:start value="199201312359"/>
-            <urn2:end value="201501150059"/>
-         </urn1:timePeriod>
+         <urn2:requestId extension="3-2345"/>
+         <urn2:personId extension="192011189228" root="1.2.752.129.2.1.3.1"/>
       </urn1:GetRequestStatus>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="Testcases including VP"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Setup TAK" searchProperties="true"><con:settings/><con:testStep type="manualTestStep" name="Setup TAK"><con:description>Importera data i TAK:
-testScripts/sql/GetMeasurement_setup_service.sql
-testScripts/sql/GetMeasurement_setup_tests.sql</con:description><con:settings/><con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC3: Inget svar från ett system, endast engagemang i ett system" searchProperties="true"><con:settings/><con:testStep type="request" name="Update - setup - Sven Sturesson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UpdateResponderBinding</con:interface><con:operation>Update</con:operation><con:request name="Update - setup - Sven Sturesson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#serviceEndpointVp}/vp/Update/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:itintegration:engagementindex:UpdateResponder:1" xmlns:urn2="urn:riv:itintegration:engagementindex:1">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1:GetRequestStatus"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="Testcases including VP"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Setup TAK" searchProperties="true"><con:settings/><con:testStep type="manualTestStep" name="Setup TAK"><con:description>Importera data i TAK:
+testScripts/sql/GetRequestStatus_setup_service.sql
+testScripts/sql/GetRequestStatus_setup_tests.sql</con:description><con:settings/><con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC3: Inget svar från ett system, endast engagemang i ett system" searchProperties="true"><con:settings/><con:testStep type="request" name="Update - setup - Sven Sturesson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UpdateResponderBinding</con:interface><con:operation>Update</con:operation><con:request name="Update - setup - Sven Sturesson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#serviceEndpointVp}/vp/Update/1/rivtabp21</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:itintegration:engagementindex:UpdateResponder:1" xmlns:urn2="urn:riv:itintegration:engagementindex:1">
    <soapenv:Header>
       <urn:LogicalAddress>5565594230</urn:LogicalAddress>
    </soapenv:Header>
@@ -2610,4 +2629,4 @@ declare namespace mule='http://www.muleumo.org/providers/soap/1.0';
 /soap:Envelope/soap:Body/ns2:UpdateResponse</path><content>&lt;ns2:UpdateResponse xmlns="urn:riv:itintegration:engagementindex:1" xmlns:ns2="urn:riv:itintegration:engagementindex:UpdateResponder:1" xmlns:ns3="urn:riv:itintegration:registry:1" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   &lt;ns2:ResultCode>OK&lt;/ns2:ResultCode>
 &lt;/ns2:UpdateResponse></content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:engagementindex:UpdateResponder:1:Update"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Teardown TAK" searchProperties="true"><con:settings/><con:testStep type="manualTestStep" name="Teardown TAK"><con:description>Rensa data i TAK:
-testScripts/sql/GetMeasurement_teardown_tests.sql</con:description><con:settings/><con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
+testScripts/sql/GetRequestStatus_teardown_tests.sql</con:description><con:settings/><con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>serviceEndpoint</con:name><con:value>33.33.33.33:8084</con:value></con:property><con:property><con:name>serviceEndpointVp</con:name><con:value>33.33.33.33:8070</con:value></con:property><con:property><con:name>serviceDomain</con:name><con:value>riv:clinicalprocess:activity:request</con:value></con:property><con:property><con:name>categorization</con:name><con:value>client</con:value></con:property></con:properties><con:wssContainer><con:crypto><con:source>/Users/martin/git/vp/certs/client.jks</con:source><con:password>password</con:password><con:type>KEYSTORE</con:type></con:crypto><con:crypto><con:source>/Users/martin/git/vp/certs/truststore.jks</con:source><con:password>password</con:password><con:type>TRUSTSTORE</con:type></con:crypto><con:outgoing><con:name>outgoing</con:name><con:entry type="Encryption" username="client" password="password"><con:configuration><crypto>client.jks</crypto><keyIdentifierType>0</keyIdentifierType><symmetricEncAlgorithm/><encKeyTransport/><embeddedKeyName/><embeddedKeyPassword/><encryptionCanonicalization/><encryptSymmetricKey>true</encryptSymmetricKey></con:configuration></con:entry></con:outgoing></con:wssContainer><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
