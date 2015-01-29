@@ -10,3 +10,4 @@ GetAggregatedRequestStatus/target
 GetAggregatedRequestStatus-teststub/.settings
 .settings
 target
+GetAggregatedRequestStatus/testScripts/gatling/.gradle

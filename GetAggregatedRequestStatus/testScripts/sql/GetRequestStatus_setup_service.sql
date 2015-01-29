@@ -2,11 +2,11 @@ use tak;
 
 SET @serviceContractNamespace = 'urn:riv:clinicalprocess:activity:request:GetRequestStatus:1:rivtabp21';
 SET @popularDomainName = 'Hantera hälsorelaterade tillstånd, basuppgifter - GetRequestStatus';
-SET @pathToServices = 'http://localhost:8084/GetRequestStatusResponder/service/v1';
+SET @pathToServices = 'http://localhost:8084/GetRequestStatus/service/v1';
 SET @producerHsaId = 'GetAggregatedRequestStatus';
 SET @consumerHsaId = 'client';
 
--- =========================================================================== 
+-- ===========================================================================
 -- Setup routing in TAK
 -- ===========================================================================
 
@@ -35,4 +35,3 @@ from `LogiskAdressat` as adressat, `Tjanstekontrakt` as kontrakt, `Tjanstekompon
 where adressat.hsaId = '5565594230'
 and kontrakt.namnrymd = @serviceContractNamespace
 and konsument.hsaId = @consumerHsaId;
-
