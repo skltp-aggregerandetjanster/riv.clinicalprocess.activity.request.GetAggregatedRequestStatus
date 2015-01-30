@@ -11,3 +11,7 @@ GetAggregatedRequestStatus-teststub/.settings
 .settings
 target
 GetAggregatedRequestStatus/testScripts/gatling/.gradle
+.cache
+GetAggregatedRequestStatus/testScripts/gatling/bin
+GetAggregatedRequestStatus/testScripts/gatling/build
+GetAggregatedRequestStatus/testScripts/gatling/results
