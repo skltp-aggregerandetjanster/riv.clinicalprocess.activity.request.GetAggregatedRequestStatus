@@ -58,8 +58,7 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 //	  		 since mule-deploy.properties can't load config-files from jar-files on the classpath, e.g. agp-core.jar
             "GetAggregatedRequestStatus-common.xml," +
 			"teststub-services/engagemangsindex-teststub-service.xml," + 
-			"teststub-services/service-producer-teststub-service.xml," +
-			"thisfiledoenstexist.xml";
+			"teststub-services/service-producer-teststub-service.xml";
     }
 
 	/**
