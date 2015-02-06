@@ -1,6 +1,6 @@
 -- Detta script tar bort all data  från TAK som behövdes för testerna
 
-SET @popularDomainName = 'Hantera hälsorelaterade tillstånd, basuppgifter';
+SET @popularDomainName = 'vård- och omsorg kärnprocess, hantera aktiviteter, remisshantering';
 
 -- Ta bort all anropsbehörigheter
 

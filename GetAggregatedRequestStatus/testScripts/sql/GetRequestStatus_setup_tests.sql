@@ -8,7 +8,7 @@
 SET @consumerHsaId = 'client';
 
 SET @serviceContractNamespace = 'urn:riv:clinicalprocess:activity:request:GetRequestStatus:1:rivtabp21';
-SET @popularDomainName = 'Hantera hälsorelaterade tillstånd, basuppgifter';
+SET @popularDomainName = 'vård- och omsorg kärnprocess, hantera aktiviteter, remisshantering';
 SET @pathToServices = 'GetRequestStatus/1/rivtabp21';
 
 -- =========================================================================== 

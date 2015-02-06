@@ -1,7 +1,7 @@
 use tak;
 
 SET @serviceContractNamespace = 'urn:riv:clinicalprocess:activity:request:GetRequestStatus:1:rivtabp21';
-SET @popularDomainName = 'Hantera hälsorelaterade tillstånd, basuppgifter - GetRequestStatus';
+SET @popularDomainName = 'vård- och omsorg kärnprocess, hantera aktiviteter, remisshantering';
 SET @pathToServices = 'http://localhost:8084/GetRequestStatus/service/v1';
 SET @producerHsaId = 'GetAggregatedRequestStatus';
 SET @consumerHsaId = 'client';
