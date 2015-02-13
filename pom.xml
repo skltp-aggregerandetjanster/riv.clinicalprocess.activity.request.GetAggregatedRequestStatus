@@ -18,7 +18,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 
   <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.activity.request</groupId>
   <artifactId>GetAggregatedRequestStatus-parent</artifactId>
-  <version>1.0.0-RC1</version>
+  <version>1.0.0-RC2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>GetAggregatedRequestStatus-parent</name>
 
@@ -26,7 +26,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <connection>scm:git:git://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.activity.request.GetAggregatedRequestStatus.git</connection>
     <developerConnection>scm:git:git://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.activity.request.GetAggregatedRequestStatus.git</developerConnection>
     <url>https://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.activity.request.GetAggregatedRequestStatus.git</url>
-    <tag>v1.0.0-RC1</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <modules>
