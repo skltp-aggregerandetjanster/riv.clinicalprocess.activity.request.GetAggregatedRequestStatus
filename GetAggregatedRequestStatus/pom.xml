@@ -13,7 +13,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
   <parent>
     <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.activity.request</groupId>
     <artifactId>GetAggregatedRequestStatus-parent</artifactId>
-    <version>1.0.0-RC1</version>
+    <version>1.0.0-RC2-SNAPSHOT</version>
   </parent>
 
   <artifactId>GetAggregatedRequestStatus</artifactId>
@@ -32,7 +32,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <dependency>
      <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.activity.request</groupId>
      <artifactId>GetAggregatedRequestStatus-schemas</artifactId>
-     <version>1.0.0-RC1</version>
+     <version>1.0.0-RC2-SNAPSHOT</version>
     </dependency>
   
     <dependency>
