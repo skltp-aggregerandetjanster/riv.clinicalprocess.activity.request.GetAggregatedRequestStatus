@@ -1,4 +1,4 @@
-package agp
+package requeststatus
 
 import scala.concurrent.duration._
 import io.gatling.core.Predef._
@@ -9,15 +9,15 @@ import scenarios.GetAggregatedRequestStatusScenario
 /**
  * Test VP:GetAggregatedRequestStatus over 12 hours
  */
-class TP03Robustness extends Simulation {
+class TP04Robustness extends Simulation {
 
-  val baseURL                 = "https://33.33.33.33:20000"
+  val baseURL                 = "https://qa.esb.ntjp.se/vp/clinicalprocess/activity/request/GetRequestStatus/1/rivtabp21"
   
   val testDuration            =  12 hours
-  val rampDuration            =   2 minutes
-  val minWaitDuration         =   2 seconds
-  val maxWaitDuration         =   5 seconds
   val numberOfConcurrentUsers =   5
+  val rampDuration            =   1 minute
+  val minWaitDuration         =   2 seconds
+  val maxWaitDuration         =   4 seconds
   
   val httpProtocol = http.baseURL(baseURL).disableResponseChunksDiscarding
 
