@@ -41,7 +41,7 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 
 	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(GetAggregatedRequestStatusIntegrationTest.class);
-	 
+
     private static final RecursiveResourceBundle rb = new RecursiveResourceBundle("GetAggregatedRequestStatus-config");
 	private static final String SKLTP_HSA_ID = rb.getString("SKLTP_HSA_ID");
 
@@ -51,13 +51,13 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 	private static final String DEFAULT_SERVICE_ADDRESS = GetAggregatedRequestStatusMuleServer.getAddress("SERVICE_INBOUND_URL");
 
 	protected String getConfigResources() {
-	    
-		return 
-			"soitoolkit-mule-jms-connector-activemq-embedded.xml," + 
-//           Only load GetAggregatedRequestStatus-common.xml, it will import the other config files 
+
+		return
+			"soitoolkit-mule-jms-connector-activemq-embedded.xml," +
+//           Only load GetAggregatedRequestStatus-common.xml, it will import the other config files
 //	  		 since mule-deploy.properties can't load config-files from jar-files on the classpath, e.g. agp-core.jar
             "GetAggregatedRequestStatus-common.xml," +
-			"teststub-services/engagemangsindex-teststub-service.xml," + 
+			"teststub-services/engagemangsindex-teststub-service.xml," +
 			"teststub-services/service-producer-teststub-service.xml";
     }
 
@@ -66,9 +66,9 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 	 */
     @Test
     public void test_ok_zero_hits() {
-    	doTest(TEST_RR_ID_ZERO_HITS, 0);		
+    	doTest(TEST_RR_ID_ZERO_HITS, 0);
     }
-    
+
     /**
 	 * Perform a test that is expected to return an exception due to missing mandatory http headers (sender-id and original-consumer-id)
 	 */
@@ -82,14 +82,14 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 		}
 
     	try {
-	    	doTest(TEST_RR_ID_ZERO_HITS, SAMPLE_SENDER_ID, null, 0);		
+	    	doTest(TEST_RR_ID_ZERO_HITS, SAMPLE_SENDER_ID, null, 0);
 	       	fail("This one should fail on missing http header");
 		} catch (SOAPFaultException e) {
 			assertEquals("Mandatory HTTP header x-rivta-original-serviceconsumer-hsaid is missing", e.getMessage());
 		}
 
     	try {
-	       	doTest(TEST_RR_ID_ZERO_HITS, null, null, 0);		
+	       	doTest(TEST_RR_ID_ZERO_HITS, null, null, 0);
 	       	fail("This one should fail on missing http header");
 		} catch (SOAPFaultException e) {
 			assertEquals("Mandatory HTTP headers x-vp-sender-id and x-rivta-original-serviceconsumer-hsaid are missing", e.getMessage());
@@ -101,9 +101,7 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 	 */
     @Test
     public void test_ok_one_hit() {
-    	
-    	List<ProcessingStatusRecordType> statusList = doTest(TEST_RR_ID_ONE_HIT, 1, new ExpectedTestData(TEST_BO_ID_ONE_HIT, TEST_LOGICAL_ADDRESS_1));
-
+    	List<ProcessingStatusRecordType> statusList = doTest(TEST_RR_ID_ONE_HIT, 2, new ExpectedTestData(TEST_BO_ID_ONE_HIT, TEST_LOGICAL_ADDRESS_1));
     	assertProcessingStatusDataFromSource(statusList.get(0), TEST_LOGICAL_ADDRESS_1);
     }
 
@@ -114,11 +112,11 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
     public void test_ok_many_hits_with_partial_timeout() {
 
     	// Setup call and verify the response, expect one booking from source #1, two from source #2 and a timeout from source #3
-    	List<ProcessingStatusRecordType> statusList = doTest(TEST_RR_ID_MANY_HITS, 3, 
+    	List<ProcessingStatusRecordType> statusList = doTest(TEST_RR_ID_MANY_HITS, 3,
     		new ExpectedTestData(TEST_BO_ID_MANY_HITS_1, TEST_LOGICAL_ADDRESS_1),
     		new ExpectedTestData(TEST_BO_ID_MANY_HITS_2, TEST_LOGICAL_ADDRESS_2),
     		new ExpectedTestData(TEST_BO_ID_MANY_HITS_3, TEST_LOGICAL_ADDRESS_2));
-		
+
     	// Verify the Processing Status, expect ok from source system #1 and #2 but a timeout from #3
 		assertProcessingStatusDataFromSource(statusList.get(0), TEST_LOGICAL_ADDRESS_1);
 		assertProcessingStatusDataFromSource(statusList.get(1), TEST_LOGICAL_ADDRESS_2);
@@ -132,14 +130,14 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 	public void test_fault_invalidInput() throws Exception {
 
     	List<ProcessingStatusRecordType> statusList = doTest(TEST_RR_ID_FAULT_INVALID_ID, 1);
-		
+
     	// Verify the Processing Status, expect a processing failure from the source system
 		assertProcessingStatusNoDataSynchFailed(statusList.get(0), TEST_LOGICAL_ADDRESS_1, VIRTUALIZATION_PLATFORM, EXPECTED_ERR_INVALID_ID_MSG);
 	}
-    
+
     /**
      * Helper method for performing a call to the aggregating service and perform some common validations of the result
-     * 
+     *
      * @param registeredResidentId
      * @param expectedProcessingStatusSize
      * @param testData
@@ -151,7 +149,7 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 
 	/**
      * Helper method for performing a call to the aggregating service and perform some common validations of the result
-     * 
+     *
      * @param registeredResidentId
      * @param senderId
      * @param originalConsumerHsaId
@@ -172,10 +170,10 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
     	int expextedResponseSize = testData.length;
 
 		assertEquals(expextedResponseSize, response.getRequestStatus().size());
-		
+
 		for (int i = 0; i < testData.length; i++) {
 			RequestStatusType responseElement = response.getRequestStatus().get(i);
-			assertEquals(registeredResidentId, responseElement.getPatient().getPersonId().getExtension());		
+			assertEquals(registeredResidentId, responseElement.getPatient().getPersonId().getExtension());
 
 			assertEquals(testData[i].getExpectedLogicalAddress(), responseElement.getRequestOrganisation().getCareUnitId().getExtension());
 					//.getPerformerRole().getCareUnit().getId().getExtension());
@@ -184,10 +182,10 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
     	// Verify the size of the processing status and return it for further analysis
 		ProcessingStatusType statusList = processingStatusHolder.value;
 		assertEquals(expectedProcessingStatusSize, statusList.getProcessingStatusList().size());
-		
+
 		// Verify that correct "x-vp-sender-id" http header was passed to the engagement index
 		assertEquals(SKLTP_HSA_ID, EngagemangsindexTestProducerLogger.getLastSenderId());
-		
+
 		// Verify that correct "x-rivta-original-serviceconsumer-hsaid" http header was passed to the engagement index
 		assertEquals(SAMPLE_ORIGINAL_CONSUMER_HSAID, EngagemangsindexTestProducerLogger.getLastOriginalConsumer());
 
