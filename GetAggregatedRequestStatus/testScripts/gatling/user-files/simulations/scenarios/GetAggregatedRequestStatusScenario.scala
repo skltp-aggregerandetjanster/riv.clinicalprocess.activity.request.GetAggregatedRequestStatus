@@ -22,6 +22,10 @@ object GetAggregatedRequestStatusScenario {
           .check(status.is(session => session("status").as[String].toInt))
           .check(xpath("soap:Envelope", List("soap" -> "http://schemas.xmlsoap.org/soap/envelope/")).exists)
           .check(substring("GetRequestStatusResponse"))
-          .check(xpath("//ns3:requestStatus", List("ns3" -> "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:2")).count.is(session => session("count").as[String].toInt))
+          .check(substring("HSA-ID-4"))
+          .check(substring("HSA-ID-5"))
+          .check(substring("HSA-ID-6"))
+       // TODO - xpath expression for counting elements without prefix
+       // .check(xpath("//requestStatus", List("" -> "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1")).count.is(session => session("count").as[String].toInt))
       )
 }
