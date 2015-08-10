@@ -1,17 +1,13 @@
 package se.skltp.aggregatingservices.riv.clinicalprocess.activity.request.getaggregatedrequeststatus;
 
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.soitoolkit.commons.mule.util.ThreadSafeSimpleDateFormat;
 
 import riv.clinicalprocess.activity.request.getrequeststatusresponder.v1.GetRequestStatusType;
 import se.skltp.agp.riv.itintegration.engagementindex.findcontentresponder.v1.FindContentResponseType;
@@ -22,7 +18,6 @@ import se.skltp.agp.service.api.RequestListFactory;
 public class RequestListFactoryImpl implements RequestListFactory {
 
     private static final Logger log = LoggerFactory.getLogger(RequestListFactoryImpl.class);
-    private static final ThreadSafeSimpleDateFormat df = new ThreadSafeSimpleDateFormat("yyyyMMddhhmmss");
 
     /**
      * Filtrera svarsposter från i EI (ei-engagement) baserat parametrar i GetRequestStatus requestet (req).
@@ -46,19 +41,6 @@ public class RequestListFactoryImpl implements RequestListFactory {
 
         GetRequestStatusType originalRequest = (GetRequestStatusType)qo.getExtraArg();
 
-        Date reqFrom = parseTs(
-                (originalRequest.getTimePeriod() == null
-                ||
-                originalRequest.getTimePeriod().getStart() == null) 
-                ? 
-                null : originalRequest.getTimePeriod().getStart().getValue());
-
-        Date reqTo = parseTs(
-                (originalRequest.getTimePeriod() == null 
-                ||
-                originalRequest.getTimePeriod().getEnd() == null)
-                ? null : originalRequest.getTimePeriod().getEnd().getValue());
-
         FindContentResponseType eiResp = (FindContentResponseType)src;
         List<EngagementType> inEngagements = eiResp.getEngagement();
 
@@ -66,13 +48,9 @@ public class RequestListFactoryImpl implements RequestListFactory {
 
         Map<String, List<String>> sourceSystem_pdlUnitList_map = new HashMap<String, List<String>>();
 
-        for (EngagementType inEng : inEngagements) {
-            // Filter
-            if (mostRecentContentIsBetween(reqFrom, reqTo, inEng.getMostRecentContent())) {
-                // Add pdlUnit to source system
-                log.debug("Add SS: {} for PDL unit: {}", inEng.getSourceSystem(), inEng.getLogicalAddress());
-                addPdlUnitToSourceSystem(sourceSystem_pdlUnitList_map, inEng.getSourceSystem(), inEng.getLogicalAddress());
-            }
+        for (EngagementType engagement : inEngagements) {
+            log.debug("Add source system: {} for producer: {}", engagement.getSourceSystem(), engagement.getLogicalAddress());
+            addPdlUnitToSourceSystem(sourceSystem_pdlUnitList_map, engagement.getSourceSystem(), engagement.getLogicalAddress());
         }
 
         // Prepare the result of the transformation as a list of request-payloads, 
@@ -91,42 +69,6 @@ public class RequestListFactoryImpl implements RequestListFactory {
         }
         log.debug("Transformed payload: {}", reqList);
         return reqList;
-    }
-
-    private Date parseTs(String ts) {
-        try {
-            if (ts == null || ts.length() == 0) {
-                return null;
-            } else {
-                return df.parse(ts);
-            }
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private boolean mostRecentContentIsBetween(Date from, Date to, String mostRecentContentTimestamp) {
-        if (mostRecentContentTimestamp == null) {
-            log.error("mostRecentContent - timestamp string is null");
-            return true;
-        }
-        if (StringUtils.isBlank(mostRecentContentTimestamp)) {
-            log.error("mostRecentContent - timestamp string is blank");
-            return true;
-        }
-        log.debug("Is {} between {} and ", new Object[] {mostRecentContentTimestamp, from, to});
-        try {
-            Date ts = df.parse(mostRecentContentTimestamp);
-            if (from != null && from.after(ts)) {
-                return false;
-            }
-            if (to != null && to.before(ts)) {
-                return false;
-            }
-            return true;
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     private void addPdlUnitToSourceSystem(Map<String, List<String>> sourceSystem_pdlUnitList_map, String sourceSystem, String pdlUnitId) {
