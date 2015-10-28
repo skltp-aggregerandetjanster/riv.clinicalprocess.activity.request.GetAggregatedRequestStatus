@@ -24,7 +24,7 @@ public class GetAggregatedRequestStatusTestConsumer extends AbstractTestConsumer
 		String serviceAddress = GetAggregatedRequestStatusMuleServer.getAddress("SERVICE_INBOUND_URL");
 		String personnummer = TEST_RR_ID_ONE_HIT;
 
-		GetAggregatedRequestStatusTestConsumer consumer = new GetAggregatedRequestStatusTestConsumer(serviceAddress, SAMPLE_SENDER_ID, SAMPLE_ORIGINAL_CONSUMER_HSAID);
+		GetAggregatedRequestStatusTestConsumer consumer = new GetAggregatedRequestStatusTestConsumer(serviceAddress, SAMPLE_SENDER_ID, SAMPLE_ORIGINAL_CONSUMER_HSAID, SAMPLE_CORRELATION_ID);
 		Holder<GetRequestStatusResponseType> responseHolder = new Holder<GetRequestStatusResponseType>();
 		Holder<ProcessingStatusType> processingStatusHolder = new Holder<ProcessingStatusType>();
 
@@ -34,10 +34,10 @@ public class GetAggregatedRequestStatusTestConsumer extends AbstractTestConsumer
 
 	}
 
-	public GetAggregatedRequestStatusTestConsumer(String serviceAddress, String senderId, String originalConsumerHsaId) {
+	public GetAggregatedRequestStatusTestConsumer(String serviceAddress, String senderId, String originalConsumerHsaId, String correlationId) {
 	    
 		// Setup a web service proxy for communication using HTTPS with Mutual Authentication
-		super(GetRequestStatusResponderInterface.class, serviceAddress, senderId, originalConsumerHsaId);
+		super(GetRequestStatusResponderInterface.class, serviceAddress, senderId, originalConsumerHsaId, correlationId);
 	}
 
 	public void callService(String logicalAddress, String registeredResidentId, Holder<ProcessingStatusType> processingStatusHolder, Holder<GetRequestStatusResponseType> responseHolder) {
