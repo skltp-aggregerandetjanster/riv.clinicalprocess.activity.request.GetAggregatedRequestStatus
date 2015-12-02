@@ -20,19 +20,12 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
   <packaging>mule</packaging>
   <name>GetAggregatedRequestStatus</name>
 
-  <properties>
-    <skltp.agp.version>1.2.3</skltp.agp.version>
-    <!-- Properties for generating code from XML Schemas (JAX-WS) -->
-    <schema.path>${basedir}/src/main/resources/schemas</schema.path>
-    <cxf.version>2.5.1</cxf.version>
-  </properties>
-
   <dependencies>
 
     <dependency>
      <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.activity.request</groupId>
      <artifactId>GetAggregatedRequestStatus-schemas</artifactId>
-     <version>1.0.0-RC2</version>
+     <version>${project.version}</version>
     </dependency>
 
     <dependency>
