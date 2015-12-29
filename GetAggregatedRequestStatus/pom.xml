@@ -42,12 +42,12 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 
     <dependency>
       <groupId>org.soitoolkit.commons.poms.mule-dependencies</groupId>
-      <artifactId>soitoolkit-mule-3.3.1-dependencies</artifactId>
+      <artifactId>soitoolkit-mule-${mule.version}-dependencies</artifactId>
       <version>${soitoolkit.version}</version>
       <type>pom</type>
     </dependency>
 
-    <!-- TEST DEPENDENCIES -->
+    <!-- test dependencies -->
 
     <dependency>
       <groupId>org.soitoolkit.commons.poms</groupId>
@@ -111,7 +111,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
         <configuration>
 
           <inclusions>
-                <!-- Include mule-dependencies that doesn't come with Mule 3.x otherwise we can't install to a vanilla Mule 3.x installation -->
+            <!-- Include mule-dependencies that don't come with Mule 3.x otherwise we can't install to a vanilla Mule 3.x installation -->
             <inclusion>
               <groupId>org.mule.modules</groupId>
               <artifactId>mule-module-rest-router</artifactId>
@@ -198,7 +198,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
           -->
           <classifier>core</classifier>
           <excludes>
-            <exclude>log4j.xml</exclude>
+            <exclude>log4j2.xml</exclude>
           </excludes>
         </configuration>
         <executions>
@@ -220,14 +220,13 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <!--<outputDirectory>target/classes</outputDirectory> -->
+              <overwrite>true</overwrite>
               <outputDirectory>${project.build.outputDirectory}</outputDirectory>
               <resources>
                 <resource>
                   <directory>src/environment</directory>
                   <includes>
-                    <include>log4j.xml</include>
-                    <include>log4j.dtd</include>
+                    <include>log4j2.xml</include>
                   </includes>
                 </resource>
               </resources>
@@ -242,7 +241,10 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
   <profiles>
     <profile>
       <id>muleServer</id>
-      <!-- Start mule server with the command "mvn -PmuleServer" or "mvn -PmuleServer -Dexec.args="${artifaceId}-config.xml"" if you want to override the default config-file -->
+      <!-- Start mule server with the command 
+              mvn -PmuleServer or 
+              mvn -PmuleServer -Dexec.args="${artifaceId}-config.xml"
+           if you want to override the default config-file -->
       <build>
         <defaultGoal>test</defaultGoal>
         <plugins>
