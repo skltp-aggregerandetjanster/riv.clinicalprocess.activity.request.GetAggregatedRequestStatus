@@ -2,7 +2,7 @@ package se.skltp.aggregatingservices.riv.clinicalprocess.activity.request.getagg
 
 trait CommonParameters {
   val serviceName:String     = "RequestStatus"
-  val urn:String             = "urn:riv:clinicalprocess:activity:request:GetRequestStatusResponder:1"
+  val urn:String             = "urn:riv:clinical:process:activity:request:GetRequestStatusResponder:1"
   val responseElement:String = "GetRequestStatusResponse"
   val responseItem:String    = "requestStatusId"
   val responseItemUrn:String = "urn:riv:clinicalprocess:activity:request:1"
