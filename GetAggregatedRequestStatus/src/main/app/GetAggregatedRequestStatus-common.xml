@@ -52,6 +52,7 @@
 	    <spring:property name="locations">
 	      <spring:list>
 	        <spring:value>classpath:GetAggregatedRequestStatus-config.properties</spring:value>
+	        <spring:value>classpath:agp-config-override.properties</spring:value>
 	        <spring:value>classpath:GetAggregatedRequestStatus-config-override.properties</spring:value>
 	      </spring:list>
 	    </spring:property>
