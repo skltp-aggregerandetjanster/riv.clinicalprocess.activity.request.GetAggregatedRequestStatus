@@ -23,6 +23,7 @@ import java.util.List;
 import javax.xml.ws.Holder;
 import javax.xml.ws.soap.SOAPFaultException;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +31,7 @@ import org.soitoolkit.commons.mule.util.RecursiveResourceBundle;
 
 import riv.clinicalprocess.activity.request.getrequeststatusresponder.v1.GetRequestStatusResponseType;
 import riv.clinicalprocess.activity.request.v1.RequestStatusType;
+import se.skltp.agp.cache.TakCacheBean;
 import se.skltp.aggregatingservices.riv.clinicalprocess.activity.request.getaggregatedrequeststatus.GetAggregatedRequestStatusMuleServer;
 import se.skltp.agp.riv.interoperability.headers.v1.ProcessingStatusRecordType;
 import se.skltp.agp.riv.interoperability.headers.v1.ProcessingStatusType;
@@ -59,9 +61,16 @@ public class GetAggregatedRequestStatusIntegrationTest extends AbstractAggregate
 //	  		 since mule-deploy.properties can't load config-files from jar-files on the classpath, e.g. agp-core.jar
             "GetAggregatedRequestStatus-common.xml," +
 			"teststub-services/engagemangsindex-teststub-service.xml," +
-			"teststub-services/service-producer-teststub-service.xml";
-    }
-
+			"teststub-services/service-producer-teststub-service.xml," +
+			"teststub-non-default-services/tak-teststub-service.xml";
+	}
+	
+	@Before
+	public void loadTakCache() throws Exception {
+	final TakCacheBean takCache = (TakCacheBean) muleContext.getRegistry().lookupObject("takCacheBean");
+	takCache.updateCache();
+	}
+	
 	/**
 	 * Perform a test that is expected to return zero hits
 	 */
